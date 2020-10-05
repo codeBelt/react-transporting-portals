@@ -2,9 +2,8 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { ProTip } from '../../ui/ProTip';
-import Link from '../../ui/Link';
-import { Copyright } from '../../ui/Copyright';
+import { ProTip } from '../../ui/pro-tip/ProTip';
+import Link from '../../shared/Link';
 
 interface IProps {}
 
@@ -19,7 +18,6 @@ export const IndexPage: React.FC<IProps> = (props) => {
           Go to the about page
         </Link>
         <ProTip />
-        <Copyright />
       </Box>
     </Container>
   );
