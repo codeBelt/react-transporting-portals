@@ -15,7 +15,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { MainNavigation } from '../main-navigation/MainNavigation';
 import { Copyright } from '../copyright/Copyright';
 import { useMainLayoutStyles } from './MainLayout.styles';
-import { DisplayPortal, PortalProvider } from '../portals/portals';
+import { PortalOut, PortalProvider } from '../portals/portals';
 import { PortalType } from '../portals/portals.constants';
 
 interface IProps {
@@ -49,7 +49,7 @@ export const MainLayout: React.FC<IProps> = (props) => {
             <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
               {props.title}
             </Typography>
-            <DisplayPortal portType={PortalType.AppBar} />
+            <PortalOut portType={PortalType.AppBar} />
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />

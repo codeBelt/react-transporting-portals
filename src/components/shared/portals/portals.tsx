@@ -39,7 +39,7 @@ interface IProps {
   portType: PortalType;
 }
 
-export const InternalPortal: React.FC<IProps> = (props) => {
+export const PortalIn: React.FC<IProps> = (props) => {
   const { addPortalItem, removePortalItem } = useContext(PortalContext);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ export const InternalPortal: React.FC<IProps> = (props) => {
   return null;
 };
 
-export const DisplayPortal: React.FC<IProps> = (props) => {
+export const PortalOut: React.FC<IProps> = (props) => {
   const { portalMap } = useContext(PortalContext);
 
   return (portalMap.get(props.portType) as ReactElement) || null;
