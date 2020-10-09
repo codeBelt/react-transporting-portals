@@ -12,7 +12,7 @@ export const IndexPage: React.FC<IProps> = (props) => {
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Next.js with TypeScript example
+          Welcome to the home page.
         </Typography>
         <Link href="/about" color="secondary">
           Go to the about page

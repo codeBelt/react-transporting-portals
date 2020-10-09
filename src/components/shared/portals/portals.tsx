@@ -46,7 +46,7 @@ export const PortalIn: React.FC<IProps> = (props) => {
     addPortalItem([props.portType, props.children]);
 
     return () => removePortalItem(props.portType);
-  }, []);
+  }, [props.portType, props.children]);
 
   return null;
 };
