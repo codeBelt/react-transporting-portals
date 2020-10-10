@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
-import { createStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 
 export const useDashboardPageStyles = makeStyles((theme) =>
   createStyles({

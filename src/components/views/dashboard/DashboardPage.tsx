@@ -8,6 +8,8 @@ import { useDashboardPageStyles } from './DashboardPage.styles';
 import { PortalIn } from '../../shared/portals/portals';
 import { PortalType } from '../../shared/portals/portals.constants';
 import Button from '@material-ui/core/Button';
+import Chart from './components/Chart';
+import Typography from '@material-ui/core/Typography';
 
 export const DashboardPage = () => {
   const classes = useDashboardPageStyles();
@@ -22,9 +24,13 @@ export const DashboardPage = () => {
           I've been clicked {count} times
         </Button>
       </PortalIn>
-
+      <Grid item xs={12}>
+        <Typography variant="h5"> The button has been clicked {count} times</Typography>
+      </Grid>
       <Grid item xs={12} md={8} lg={9}>
-        <Paper className={fixedHeightPaper}>Chart{count}</Paper>
+        <Paper className={fixedHeightPaper}>
+          <Chart />
+        </Paper>
       </Grid>
       <Grid item xs={12} md={4} lg={3}>
         <Paper className={fixedHeightPaper}>
