@@ -3,17 +3,17 @@ import { PortalType } from './portals.constants';
 
 interface IPortalContext {
   portalMap: Map<PortalType, ReactNode>;
-  addPortalItem: (mapItem: [PortalType, ReactNode]) => void;
+  addPortalItem: (portalType: PortalType, component: ReactNode) => void;
   removePortalItem: (portalType: PortalType) => void;
 }
 
-const PortalContext = React.createContext<IPortalContext>(null);
+export const PortalContext = React.createContext<IPortalContext>(null);
 
 export const PortalProvider: React.FC = (props) => {
   const [portalMap, setPortal] = useState<Map<PortalType, ReactNode>>(new Map());
 
-  const addPortalItem = useCallback((mapItem: [PortalType, ReactNode]) => {
-    portalMap.set(...mapItem);
+  const addPortalItem = useCallback((portalType: PortalType, component: ReactNode) => {
+    portalMap.set(portalType, component);
 
     const clonedMapWithNewItem = new Map(portalMap);
 
@@ -43,7 +43,7 @@ export const PortalIn: React.FC<IProps> = (props) => {
   const { addPortalItem, removePortalItem } = useContext(PortalContext);
 
   useEffect(() => {
-    addPortalItem([props.portType, props.children]);
+    addPortalItem(props.portType, props.children);
 
     return () => removePortalItem(props.portType);
   }, [props.portType, props.children]);
