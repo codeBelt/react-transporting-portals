@@ -36,17 +36,17 @@ export const PortalProvider: React.FC = (props) => {
 };
 
 interface IProps {
-  portType: PortalType;
+  portalType: PortalType;
 }
 
 export const PortalIn: React.FC<IProps> = (props) => {
   const { addPortalItem, removePortalItem } = useContext(PortalContext);
 
   useEffect(() => {
-    addPortalItem(props.portType, props.children);
+    addPortalItem(props.portalType, props.children);
 
-    return () => removePortalItem(props.portType);
-  }, [props.portType, props.children]);
+    return () => removePortalItem(props.portalType);
+  }, [props.portalType, props.children]);
 
   return null;
 };
@@ -54,5 +54,5 @@ export const PortalIn: React.FC<IProps> = (props) => {
 export const PortalOut: React.FC<IProps> = (props) => {
   const { portalMap } = useContext(PortalContext);
 
-  return (portalMap.get(props.portType) as ReactElement) || null;
+  return (portalMap.get(props.portalType) as ReactElement) || null;
 };

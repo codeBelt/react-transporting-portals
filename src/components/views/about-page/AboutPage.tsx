@@ -13,7 +13,7 @@ interface IProps {}
 export const AboutPage: React.FC<IProps> = (props) => {
   return (
     <Container maxWidth="sm">
-      <PortalIn portType={PortalType.AppBar}>
+      <PortalIn portalType={PortalType.AppBar}>
         <Button variant="contained" color="secondary" onClick={() => alert('Thanks for calling!')}>
           Call Me!
         </Button>

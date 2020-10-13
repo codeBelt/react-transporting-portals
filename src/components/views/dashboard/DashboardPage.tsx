@@ -19,7 +19,7 @@ export const DashboardPage = () => {
 
   return (
     <Grid container spacing={3}>
-      <PortalIn portType={PortalType.AppBar}>
+      <PortalIn portalType={PortalType.AppBar}>
         <Button variant="contained" onClick={() => setCount(count + 1)}>
           I've been clicked {count} times
         </Button>

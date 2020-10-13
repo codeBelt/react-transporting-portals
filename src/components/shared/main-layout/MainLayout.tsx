@@ -49,7 +49,7 @@ export const MainLayout: React.FC<IProps> = (props) => {
             <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
               {props.title}
             </Typography>
-            <PortalOut portType={PortalType.AppBar} />
+            <PortalOut portalType={PortalType.AppBar} />
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
