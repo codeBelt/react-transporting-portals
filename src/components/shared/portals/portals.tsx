@@ -10,14 +10,14 @@ interface IPortalContext {
 export const PortalContext = React.createContext<IPortalContext>(null);
 
 export const PortalProvider: React.FC = (props) => {
-  const [portalMap, setPortal] = useState<Map<PortalType, ReactNode>>(new Map());
+  const [portalMap, setPortalMap] = useState<Map<PortalType, ReactNode>>(new Map());
 
   const addPortalItem = useCallback((portalType: PortalType, component: ReactNode) => {
     portalMap.set(portalType, component);
 
     const clonedMapWithNewItem = new Map(portalMap);
 
-    setPortal(clonedMapWithNewItem);
+    setPortalMap(clonedMapWithNewItem);
   }, []);
 
   const removePortalItem = useCallback((portalType: PortalType) => {
@@ -25,7 +25,7 @@ export const PortalProvider: React.FC = (props) => {
 
     const clonedMapWithoutItem = new Map(portalMap);
 
-    setPortal(clonedMapWithoutItem);
+    setPortalMap(clonedMapWithoutItem);
   }, []);
 
   return (
